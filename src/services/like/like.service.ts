@@ -4,6 +4,7 @@ import { Application } from '../../declarations';
 import { Like } from './like.class';
 import createModel from '../../models/like.model';
 import hooks from './like.hooks';
+import OnPostLiked from './events/OnPostLiked';
 
 // Add this service to the service type index
 declare module '../../declarations' {
@@ -23,6 +24,8 @@ export default function (app: Application): void {
 
   // Get our initialized service so that we can register hooks
   const service = app.service('like');
+  service.on("created",OnPostLiked)
+  service.on("created",OnPostLiked)
 
   service.hooks(hooks);
 }

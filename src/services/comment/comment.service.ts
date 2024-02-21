@@ -4,6 +4,7 @@ import { Application } from '../../declarations';
 import { Comment } from './comment.class';
 import createModel from '../../models/comment.model';
 import hooks from './comment.hooks';
+import OnPostCommented from './events/OnPostCommented';
 
 // Add this service to the service type index
 declare module '../../declarations' {
@@ -23,6 +24,8 @@ export default function (app: Application): void {
 
   // Get our initialized service so that we can register hooks
   const service = app.service('comment');
+  service.on("created",OnPostCommented)
+  service.on("removed",OnPostCommented)
 
   service.hooks(hooks);
 }

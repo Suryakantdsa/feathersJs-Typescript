@@ -1,6 +1,11 @@
 import { HooksObject } from '@feathersjs/feathers';
 import * as authentication from '@feathersjs/authentication';
-import postValidation from '../post/hooks/post-validation';
+import postValidation from './hooks/PostValidation';
+import checkPostIdentity from './hooks/CheckPostIdentity';
+import isLiked from './hooks/IsLiked';
+import { discard } from 'feathers-hooks-common';
+import IsCommented from './hooks/IsCommented';
+
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const { authenticate } = authentication.hooks;
@@ -12,13 +17,13 @@ export default {
     get: [],
     create: [postValidation()],
     update: [],
-    patch: [],
-    remove: []
+    patch: [checkPostIdentity(),discard("likeCount","commentCount")],
+    remove: [checkPostIdentity()]
   },
 
   after: {
     all: [],
-    find: [],
+    find: [isLiked(),IsCommented()],
     get: [],
     create: [],
     update: [],

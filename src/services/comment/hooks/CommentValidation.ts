@@ -6,21 +6,17 @@ import { Hook, HookContext } from '@feathersjs/feathers';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (options = {}): Hook => {
   return async (context: HookContext): Promise<HookContext> => {
-
-    const {data,app}=context
-    const {user,title,description}=data;
-
-    if(!user){
-      throw new BadRequest("User is required")
+    const {data,params,app}=context
+    const {post , comment}=data
+    data.user=params?.user?._id
+    if(!post){
+      throw new BadRequest("Post Id is requiered")
     }
-    if(!title){
-      throw new BadRequest("User is required")
+    if(!comment){
+      throw new BadRequest("Comment Field is requied")
     }
-    if(!description){
-      throw new BadRequest("User is required")
-    }
-    await app.service("user").find(user).catch(()=>{
-      throw new BadRequest("Invalid user..!")
+    await app.service("post").get(post).catch(()=>{
+      throw new BadRequest("Invaild post")
     })
     return context;
   };

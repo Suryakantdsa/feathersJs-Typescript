@@ -30,6 +30,10 @@ export default function (app: Application): Model<any> {
         1,-1
       ],
       default:1
+     },
+     blogCount:{
+      type:Number,
+      default:0
      }
   
   

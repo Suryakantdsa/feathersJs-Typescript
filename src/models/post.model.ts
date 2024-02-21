@@ -27,8 +27,8 @@ export default function (app: Application): Model<any> {
       type:Number,
       default:0
     },
-    comment:{
-      type:String,
+    commentCount:{
+      type:Number,
       default:0
     }
 

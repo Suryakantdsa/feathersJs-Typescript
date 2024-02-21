@@ -923,7 +923,7 @@
   dependencies:
     debug "^4.3.3"
 
-"@feathersjs/errors@^5.0.22":
+"@feathersjs/errors@^5.0.14", "@feathersjs/errors@^5.0.22":
   version "5.0.22"
   resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-5.0.22.tgz#74b0e371ce48b78250be6148d0cf41ce544cf013"
   integrity sha512-vKizG6tDz8meNx5IiFjkMy08PmzdeDHmH7JnvQYl2MuKkWW0sx0qgAEP4ik7NT3MlCsrmtNUK+4BhXODfXnT7A==
@@ -2090,7 +2090,7 @@ after@0.8.2:
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
   integrity sha512-QbJ0NTQ/I9DI3uSJA4cbexiwQeRAfjPScqIbSjUDd9TOrcg6pTkdgziesOqxBMBzit8vFCTwrP27t13vFOORRA==
 
-ajv@^6.12.4:
+ajv@^6.12.4, ajv@^6.12.6:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -3138,6 +3138,18 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
+feathers-hooks-common@^8.1.2:
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/feathers-hooks-common/-/feathers-hooks-common-8.1.2.tgz#77639fa04ca45f2a91e3663f88828130b47d2086"
+  integrity sha512-y7tFE8Tpey46rQwqI2ejZpAZBzLW1OiJGA987V/ajWkiX79kfb088+rkn1nHaYqRvt4dBv3dfHrRY0GyR5uiRQ==
+  dependencies:
+    "@feathersjs/errors" "^5.0.14"
+    ajv "^6.12.6"
+    debug "^4.3.4"
+    graphql "^16.8.1"
+    lodash "^4.17.21"
+    traverse "^0.6.8"
+
 feathers-mongoose@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/feathers-mongoose/-/feathers-mongoose-8.5.1.tgz#ddd94dbdf0a9393cc28482341fc5e57eaf8b6675"
@@ -3368,6 +3380,11 @@ graphemer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
+
+graphql@^16.8.1:
+  version "16.8.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.8.1.tgz#1930a965bef1170603702acdb68aedd3f3cf6f07"
+  integrity sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==
 
 has-binary2@~1.0.2:
   version "1.0.3"
@@ -5253,6 +5270,11 @@ tr46@^3.0.0:
   integrity sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA==
   dependencies:
     punycode "^2.1.1"
+
+traverse@^0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.8.tgz#5e5e0c41878b57e4b73ad2f3d1e36a715ea4ab15"
+  integrity sha512-aXJDbk6SnumuaZSANd21XAo15ucCDE38H4fkqiGsc3MhCK+wOlZvLP9cB/TvpHT0mOyWgC4Z8EwRlzqYSUzdsA==
 
 tree-kill@^1.2.2:
   version "1.2.2"

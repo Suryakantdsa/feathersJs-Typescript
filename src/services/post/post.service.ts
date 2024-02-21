@@ -4,6 +4,7 @@ import { Application } from '../../declarations';
 import { Post } from './post.class';
 import createModel from '../../models/post.model';
 import hooks from './post.hooks';
+import OnPostCreated from './events/OnPostCreated';
 
 // Add this service to the service type index
 declare module '../../declarations' {
@@ -23,6 +24,9 @@ export default function (app: Application): void {
 
   // Get our initialized service so that we can register hooks
   const service = app.service('post');
+
+  service.on("created",OnPostCreated)
+  service.on("removed",OnPostCreated)
 
   service.hooks(hooks);
 }

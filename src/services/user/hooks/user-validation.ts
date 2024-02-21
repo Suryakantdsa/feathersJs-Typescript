@@ -13,13 +13,10 @@ export default (options = {}): Hook => {
     if(!emailRegex.test(email)){
       throw new BadRequest("Email is not vaild")
     }
-    if(email){
+    if(!password){
       throw new BadRequest("Email is required")
     }
-    if(password){
-      throw new BadRequest("Email is required")
-    }
-    if(name){
+    if(!email){
       throw new BadRequest("Email is required")
     }
     return context;
