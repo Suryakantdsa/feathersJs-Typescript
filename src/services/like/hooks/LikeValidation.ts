@@ -10,7 +10,7 @@ export default (options = {}): Hook => {
     const { data, id, params, app } = context;
     const { post } = data;
     // console.log(params?.user?._id)
-    
+  
     data.user=params?.user?._id
     data.status=1
 

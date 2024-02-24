@@ -13,7 +13,7 @@ export default function (app: Application): Model<any> {
     post: { 
       type: Schema.Types.ObjectId, 
       ref:"post",
-      required: true 
+      required: [true,"Post id is required"] 
     },
     user:{
       type:Schema.Types.ObjectId,

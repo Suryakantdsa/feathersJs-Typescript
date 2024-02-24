@@ -13,5 +13,11 @@ export interface User_Find{
     total: number,
     limit: number,
     skip: number,
-    data: [User_Get] 
+    // data:[ User_Get | null ],
+    data:Array<User_Get | null>
+}
+// enum/
+export enum User_Status{
+    ACTIVE=1,
+    DELETED=-1
 }

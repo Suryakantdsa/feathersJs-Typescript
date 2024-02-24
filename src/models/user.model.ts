@@ -4,6 +4,7 @@
 // for more of what you can do here.
 import { Application } from '../declarations';
 import { Model, Mongoose } from 'mongoose';
+import { User_Status } from '../services/user/interface/userInterface';
 
 export default function (app: Application): Model<any> {
   const modelName = 'user';
@@ -26,17 +27,20 @@ export default function (app: Application): Model<any> {
      },
      status:{
       type:Number,
-      enum:[
-        1,-1
-      ],
-      default:1
+      enum:User_Status,
+      default:User_Status.ACTIVE
      },
+     profileUrl:{
+      type:String,
+      // default:null
+    },
+    coverImgUrl:{
+      type:String
+    },
      blogCount:{
       type:Number,
       default:0
      }
-  
-  
   }, {
     timestamps: true
   });
