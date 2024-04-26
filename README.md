@@ -15,18 +15,14 @@ Getting up and running is as easy as 1, 2, 3.
 
     ```
     cd path/to/feathers-ts
-    npm install
+    yarn install
     ```
 
 3. Start your app
 
     ```
-    npm start
+    yarn dev
     ```
-
-## Testing
-
-Simply run `npm test` and all your tests in the `test/` directory will be run.
 
 ## Scaffolding
 
@@ -43,3 +39,13 @@ $ feathers help                           # Show all commands
 ## Help
 
 For more information on all the things you can do with Feathers visit [docs.feathersjs.com](http://docs.feathersjs.com).
+
+
+
+
+
+
+
+
+
+
