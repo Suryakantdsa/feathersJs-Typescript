@@ -11,6 +11,20 @@ export interface Post_Get {
         updatedAt: string,
         _v: number
 }
+export interface Post_Post {
+        user:Types.ObjectId ,
+        title: string,
+        description: string,
+        likeCount?: number,
+        commentCount?: number,
+}
+export interface Post_Patch {
+        user?:Types.ObjectId ,
+        title?: string,
+        description?: string,
+        likeCount?: number,
+        commentCount?: number,
+}
 export interface Post_Find {
     total: number,
     limit: number,

@@ -9,7 +9,8 @@ export default (options = {}): Hook => {
     const { result, app } = context;
     const { data } = result;
     for (let i = 0; i < data.length; i++) {
-      data[i].like = await app
+      data[i].like = 
+      await app
         .service("like")
         .find({
           query: {

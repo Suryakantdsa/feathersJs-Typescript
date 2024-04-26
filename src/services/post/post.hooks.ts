@@ -1,4 +1,4 @@
-import { HooksObject } from '@feathersjs/feathers';
+import { HookContext, HooksObject } from '@feathersjs/feathers';
 import * as authentication from '@feathersjs/authentication';
 import postValidation from './hooks/PostValidation';
 import checkPostIdentity from './hooks/CheckPostIdentity';
@@ -15,7 +15,15 @@ export default {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [postValidation()],
+    create: [
+      // async(context: HookContext)=>{
+
+
+
+
+      // },
+      postValidation()
+    ],
     update: [],
     patch: [checkPostIdentity(),discard("likeCount","commentCount")],
     remove: [checkPostIdentity()]

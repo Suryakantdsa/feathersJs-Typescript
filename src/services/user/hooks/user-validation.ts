@@ -1,24 +1,23 @@
-// Use this hook to manipulate incoming or outgoing data.
-// For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-import { BadRequest } from '@feathersjs/errors';
-import { Hook, HookContext } from '@feathersjs/feathers';
+import { BadRequest } from "@feathersjs/errors";
+import { Hook, HookContext } from "@feathersjs/feathers";
+import { UserSchema, arryObj } from "../../../Schema/UserSchema";
+import { validateWithZod } from "../../../utils/validateWithZod"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (options = {}): Hook => {
   return async (context: HookContext): Promise<HookContext> => {
-    const {data}=context
-    const {email,name,password}=data
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const { data } = context;
 
-    if(!emailRegex.test(email)){
-      throw new BadRequest("Email is not vaild")
+    // Perform Zod validation using the generic validateWithZod function
+    // const validation = validateWithZod(UserSchema, data);
+    const validation = validateWithZod(arryObj, data);
+    if (!validation.success) {
+      // If validation fails, throw a BadRequest error with the structured errors
+      throw new BadRequest("Validation failed", { errors: validation.errors });
     }
-    if(!password){
-      throw new BadRequest("Email is required")
-    }
-    if(!email){
-      throw new BadRequest("Email is required")
-    }
+
+    // If validation is successful, proceed with the updated data
+    context.data = validation.data;
+
     return context;
   };
 };
